@@ -1,4 +1,4 @@
-import os
+import os, json
 from dotenv import load_dotenv
 from binance.um_futures import UMFutures
 
@@ -12,4 +12,4 @@ api_secret = os.getenv("API_SECRET")
 um_futures_client = UMFutures(api_key, api_secret)
 
 # Get account information
-print(um_futures_client.account())
+print(json.dumps(um_futures_client.account()))
